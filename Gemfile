@@ -76,3 +76,7 @@ end
 gem 'devise'
 
 gem "factory_bot_rails"
+
+group :production do
+  gem 'pg'
+end
