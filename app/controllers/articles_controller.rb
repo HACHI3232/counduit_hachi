@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_article, except:[:new, :create]
+  before_action :set_article, except: [:new, :create]
   before_action :move_to_index, except: [:show]
   def new
     @article = Article.new
@@ -25,13 +25,11 @@ class ArticlesController < ApplicationController
       render :edit
     end
   end
-  
 
   def show
   end
 
   def destroy
-    
     @article.destroy
     redirect_to root_path
   end
@@ -42,7 +40,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description, :body).merge(user_id: current_user.id)
   end
 
-  def set_article 
+  def set_article
     @article = Article.find(params[:id])
   end
 
