@@ -76,3 +76,7 @@ end
 gem 'devise'
 
 gem "factory_bot_rails"
+
+group :development do
+  gem 'rubocop', require: false
+end
